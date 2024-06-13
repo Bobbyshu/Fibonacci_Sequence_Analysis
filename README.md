@@ -1,4 +1,4 @@
-# Midterm p1: Report on Analysis of Fibonacci  Series
+# Report on Analysis of Fibonacci  Series
 * **Author**: Yunmu Shu
 * **Languages Used**: c, python
 
