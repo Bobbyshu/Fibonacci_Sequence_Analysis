@@ -19,10 +19,11 @@ class FibonacciType(Enum):
 
 
 # initialize memo
-memo = {0: 0, 1: 1}
+memo = [-1] * FIB_MAX
 
 
 def fib_recursive(n: int) -> int:
+    # base case
     if n <= 1:
         return n
 
@@ -31,12 +32,14 @@ def fib_recursive(n: int) -> int:
 
 @lru_cache(maxsize=None)
 def fib_dp(n: int) -> int:
+    # base case
     if n <= 1:
         return n
 
     if memo[n] != -1:
         return memo[n]
 
+    # store value
     memo[n] = fib_dp(n - 1) + fib_dp(n - 2)
     return memo[n]
 
@@ -45,11 +48,13 @@ def fib_iterative(n: int) -> int:
     if n <= 1:
         return n
 
+    # set const
     pre, cur, nxt = 0, 0, 1
     for i in range(2, n + 1):
         pre = cur
         cur = nxt
         nxt = pre + cur
+    
     return nxt
 
 
@@ -113,9 +118,10 @@ def main(n: int, algo: int, print_type: str):
         f = FibonacciType.DP
     fib = get_fib_series(n, f.value, print_it)
 
-    if print_type == 'single':
-        # get_fib_series(n, f.value, print_it)
+    if print_type == 'all':
         print(fib)
+    elif print_type == 'Nth':
+        get_nth(n, f.value)
 
 
 if __name__ == '__main__':
