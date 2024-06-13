@@ -1,7 +1,5 @@
 # Midterm p1: Report on Analysis of Fibonacci  Series
 * **Author**: Yunmu Shu
-* **GitHub**: https://github.com/Spring23-CS5008-BOS-Lionelle/midterm-part-1-fib-series-Bobbyshu
-* **Semester** Spring 2023
 * **Languages Used**: c, python
 
 ## Overview
